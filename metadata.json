@@ -1,12 +1,12 @@
 {
-  "name": "joshbeard-login_defs",
+  "name": "croddy-login_defs",
   "version": "1.0.0",
-  "author": "Josh Beard",
+  "author": "Josh Beard and Chris Roddy",
   "summary": "Manages /etc/login.defs",
   "license": "Apache-2.0",
-  "source": "https://github.com/joshbeard/puppet-login_defs.git",
-  "project_page": "https://github.com/joshbeard/puppet-login_defs",
-  "issues_url": "https://github.com/joshbeard/puppet-login_defs/issues",
+  "source": "https://github.com/croddy/puppet-login_defs.git",
+  "project_page": "https://github.com/croddy/puppet-login_defs",
+  "issues_url": "https://github.com/croddy/puppet-login_defs/issues",
   "dependencies": [
 
   ],
