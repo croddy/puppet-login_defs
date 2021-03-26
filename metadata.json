@@ -1,6 +1,6 @@
 {
   "name": "croddy-login_defs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Josh Beard and Chris Roddy",
   "summary": "Manages /etc/login.defs",
   "license": "Apache-2.0",
