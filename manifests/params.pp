@@ -3,11 +3,11 @@
 #
 class login_defs::params {
 
-  $sles_char_clas_var='[ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_][ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_.-]*[ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_.$-]\?'
+  $sles_char_clas_var='[ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_][ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_.-]*[ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_.$-]\?' # lint:ignore:140chars
 
-  case $::osfamily {
+  case $facts['os']['family'] {
     'RedHat': {
-      case $::operatingsystemmajrelease {
+      case $facts['os']['release']['major'] {
         '7': {
           $default_options = {
             'CREATE_HOME'     => 'yes',
@@ -48,7 +48,7 @@ class login_defs::params {
       }
     }
     'Suse': {
-      case $::operatingsystemmajrelease {
+      case $facts['os']['release']['major'] {
         '12': {
           $default_options = {
             'FAIL_DELAY'         => '3',
@@ -209,7 +209,7 @@ class login_defs::params {
       }
     }
     default: {
-      fail("${::osfamily} not supported by ${module_name}")
+      fail("${facts['os']['family']} not supported by ${module_name}")
     }
   }
 

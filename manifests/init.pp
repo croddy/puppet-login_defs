@@ -1,13 +1,10 @@
 #
 class login_defs (
-  $mode            = '0644',
-  $owner           = 'root',
-  $group           = '0',
-  $options         = {},
+  Pattern[/^\d{3,4}$/] $mode = '0644',
+  String $owner = 'root',
+  String $group = '0',
+  Hash $options = {},
 ) inherits login_defs::params {
-
-  validate_re($mode, '^\d{3,4}$', 'mode should be a 3-4 digit number')
-  validate_hash($options)
 
   $merged_options = merge($login_defs::params::default_options, $options)
 
